@@ -11,3 +11,15 @@
     background: purple;
   }
 } */
+
+.nav-item {
+  @apply w-5 h-5 fill-slate-600 group-hover:fill-slate-800;
+}
+
+.nav-button {
+  @apply p-2;
+}
+
+.title-text {
+  @apply font-medium text-blue-800 text-5xl mt-2 lg:text-7xl 2xl:text-8xl;
+}

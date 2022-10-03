@@ -10,6 +10,9 @@ module.exports = {
       "1/2": "50%",
       "2/3": "75%",
     },
+    fontFamily: {
+      sans: ["Roboto"],
+    },
     extend: {},
   },
   plugins: [],

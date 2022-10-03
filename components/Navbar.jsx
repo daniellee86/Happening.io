@@ -17,36 +17,31 @@ const Navbar = () => {
         id="nav-item-wrapper"
         className="flex items-center justify-between min-w-1/2"
       >
-        <button className="nav-button group">
-          {" "}
-          <Link href="/">
+        <Link href="/">
+          <button className="nav-button group">
             <AiOutlineHome className="nav-item" />
-          </Link>
-        </button>
-        <button className="nav-button group">
-          {" "}
-          <Link href="/event-list">
+          </button>
+        </Link>
+        <Link href="/event-list">
+          <button className="nav-button group">
             <AiOutlineCalendar className="nav-item" />
-          </Link>
-        </button>
-        <button className="group nav-button bg-purple-500 hover:bg-purple-700 rounded-full">
-          {" "}
-          <Link href="/create-event">
+          </button>
+        </Link>
+        <Link href="/create-event">
+          <button className="group nav-button bg-purple-500 hover:bg-purple-700 rounded-full">
             <AiOutlinePlus className="nav-item group-hover:fill-white" />
-          </Link>
-        </button>
-        <button className="nav-button group">
-          {" "}
-          <Link href="/">
+          </button>
+        </Link>
+        <Link href="/">
+          <button className="nav-button group">
             <AiOutlineBell className="nav-item" />
-          </Link>
-        </button>
-        <button className="nav-button group">
-          {" "}
-          <Link href="/">
+          </button>
+        </Link>
+        <Link href="/">
+          <button className="nav-button group">
             <AiOutlineUser className="nav-item" />
-          </Link>
-        </button>
+          </button>
+        </Link>
       </div>
     </nav>
   );

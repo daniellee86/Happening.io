@@ -2,15 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: purple;
-  }
-} */
+body {
+  @apply font-sans;
+}
 
 .nav-item {
   @apply w-5 h-5 fill-slate-600 group-hover:fill-slate-800;
@@ -21,5 +15,5 @@
 }
 
 .title-text {
-  @apply font-medium text-blue-800 text-5xl mt-2 lg:text-7xl 2xl:text-8xl;
+  @apply font-medium text-[#240D57] text-5xl lg:text-7xl 2xl:text-8xl;
 }

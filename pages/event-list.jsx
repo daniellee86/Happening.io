@@ -1,8 +1,10 @@
 const EventList = ({ events }) => {
   return (
     <>
-      <div className="h-[100vh] bg-slate-100">
-        <h1 className="title-text">Your Events</h1>
+      <div className="">
+        <h1 className="font-medium text-[#240D57] text-2xl lg:text-4xl 2xl:text-5xl;">
+          Your Events
+        </h1>
         <section
           id="events-container"
           className="grid grid-flow-col auto-cols-max"
@@ -11,7 +13,7 @@ const EventList = ({ events }) => {
             return (
               <div
                 id="item-container"
-                className="px-28 py-8 m-5 flex flex-col justify-between bg-white rounded-xl"
+                className="px-28 py-8 m-5 flex flex-col justify-between bg-slate-500 rounded-xl"
                 key={i}
               >
                 <h2 className="font-bold text-2xl mb-5 text-[#240D57]">

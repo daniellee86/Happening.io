@@ -7,7 +7,7 @@ body {
 }
 
 .nav-item {
-  @apply w-5 h-5 fill-slate-600 group-hover:fill-slate-800;
+  @apply w-6 h-6  fill-slate-700 group-hover:fill-primaryTwo;
 }
 
 .nav-button {
@@ -15,5 +15,5 @@ body {
 }
 
 .title-text {
-  @apply font-medium text-[#240D57] text-5xl lg:text-7xl 2xl:text-8xl;
+  @apply font-bold text-[#240D57] text-4xl lg:text-6xl 2xl:text-7xl;
 }

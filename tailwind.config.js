@@ -1,3 +1,5 @@
+const themeColors = require("./theme-colors.json");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -13,7 +15,11 @@ module.exports = {
     fontFamily: {
       sans: ["Roboto"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        ...themeColors,
+      },
+    },
   },
   plugins: [],
 };

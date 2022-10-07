@@ -63,7 +63,7 @@ const CreateEvent = ({ setEvents, events }) => {
 
         <div id="right" className="col-start-8 col-span-5 ">
           {/* eslint-disable-next-line jsx-a11y/alt-text */}
-          <img src="/event.png" className="rounded-xl object-contain"></img>
+          <img src="/birthday.png" className="rounded-xl object-contain"></img>
         </div>
       </section>
     </main>

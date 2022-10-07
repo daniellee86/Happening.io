@@ -28,8 +28,8 @@ const Navbar = () => {
           </button>
         </Link>
         <Link href="/create-event">
-          <button className="group nav-button bg-purple-500 hover:bg-purple-700 rounded-full">
-            <AiOutlinePlus className="nav-item group-hover:fill-white" />
+          <button className="group nav-button bg-gradient-to-r from-primaryThree to-primaryFour hover:from-primaryFour hover:to-primaryThree rounded-full">
+            <AiOutlinePlus className="w-5 h-5 fill-white" />
           </button>
         </Link>
         <Link href="/">

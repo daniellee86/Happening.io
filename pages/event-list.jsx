@@ -1,38 +1,59 @@
 const EventList = ({ events }) => {
   return (
     <>
-      <div className="">
-        <h1 className="font-medium text-[#240D57] text-2xl lg:text-4xl 2xl:text-5xl;">
-          Your Events
-        </h1>
-        <section
-          id="events-container"
-          className="grid grid-flow-col auto-cols-max"
-        >
-          {events.map((event, i) => {
-            return (
-              <div
-                id="item-container"
-                className="px-28 py-8 m-5 flex flex-col justify-between bg-slate-500 rounded-xl"
-                key={i}
-              >
-                <h2 className="font-bold text-2xl mb-5 text-[#240D57]">
-                  {event.Event}
-                </h2>
-                <h3 className="font-medium text-lg">Start time</h3>
-                <p className="mb-4">{event.Start}</p>
-                <h3 className="font-medium text-lg">End time</h3>
-                <p className="mb-4">{event.End}</p>
-                <h3 className="font-medium text-lg">Location</h3>
-                <p className="mb-4">{event.Location}</p>
-                <h3 className="font-medium text-lg">URL</h3>
-                <p className="mb-4">{event.URL}</p>
-                <h3 className="font-medium text-lg">Description</h3>
-                <p className="mb-4">{event.Description}</p>
-              </div>
-            );
-          })}
-        </section>
+      <div className="flex flex-col items-center gap-y-5">
+        <div id="title">
+          <h1 className="mt-10 font-medium text-[#240D57] text-2xl lg:text-4xl 2xl:text-5xl;">
+            Your Events
+          </h1>
+        </div>
+
+        <div id="sub-title">upcoming and past events</div>
+
+        <div id="cards" className="w-1/3 ">
+          <section id="events-container" className="flex flex-col gap-y-5">
+            {events.map((event, i) => {
+              return (
+                <div
+                  id="card-wrapper"
+                  className="flex rounded-xl overflow-hidden shadow-xl"
+                  key={i}
+                >
+                  <div className="w-1/2 p-5" id="image-wraper">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="event.png"
+                      alt="card image"
+                      className="rounded-xl"
+                    ></img>
+                  </div>
+                  <div
+                    className="w-1/2 flex flex-col justify-center items-center p-5"
+                    id="copy-wrapper"
+                  >
+                    <div id="copy-row" className="flex">
+                      <h2 className="font-bold text-2xl mb-5 text-[#240D57]">
+                        {event.Event}
+                      </h2>
+                    </div>
+                    <div id="copy-row" className="flex">
+                      <h3 className="font-medium text-md">Start: </h3>
+                      <p className="mb-4 text-sm">{event.Start}</p>
+                    </div>
+                    <div id="copy-row" className="flex">
+                      <h3 className="font-medium text-md">End: </h3>
+                      <p className="mb-4 text-sm">{event.End}</p>
+                    </div>
+                    <div id="copy-row" className="flex">
+                      <h3 className="font-medium text-md">Location: </h3>
+                      <p className="mb-4 text-sm">{event.Location}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </section>
+        </div>
       </div>
     </>
   );

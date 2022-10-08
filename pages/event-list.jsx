@@ -1,4 +1,16 @@
-const EventList = ({ events }) => {
+//NEXT IMPORTS
+import { useRouter } from "next/router";
+
+const EventList = ({ events, setActiveEvent, activeEvent }) => {
+  //NEXT ROUTER
+  const router = useRouter();
+
+  const handleClick = (i) => {
+    router.push("/event-card");
+    setActiveEvent(i);
+    console.log(events[activeEvent].Event);
+  };
+
   return (
     <>
       <div className="flex flex-col items-center gap-y-5">
@@ -16,8 +28,9 @@ const EventList = ({ events }) => {
               return (
                 <div
                   id="card-wrapper"
-                  className="flex rounded-xl overflow-hidden shadow-xl"
+                  className="flex rounded-xl overflow-hidden shadow-xl cursor-pointer"
                   key={i}
+                  onClick={() => handleClick(i)}
                 >
                   <div className="w-1/2 p-5" id="image-wraper">
                     {/* eslint-disable-next-line @next/next/no-img-element */}

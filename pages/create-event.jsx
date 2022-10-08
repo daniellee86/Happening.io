@@ -21,13 +21,11 @@ const CreateEvent = ({ setEvents, events }) => {
           <div id="form-container" className="flex justify-center">
             <div id="form" className="h-full w-full ">
               <form
-                className="flex flex-col gap-y-8"
+                className="flex flex-col gap-y-8 items-center"
                 onSubmit={handleSubmit((data) => {
                   setEvents((events) => [data, ...events]);
                   console.log(events);
-                  router.push({
-                    pathname: "/event-list",
-                  });
+                  router.push("/event-list");
                 })}
               >
                 {formdata.map((item) => {
@@ -35,7 +33,7 @@ const CreateEvent = ({ setEvents, events }) => {
                     <div
                       id="input-wrapper"
                       key={item.id}
-                      className="flex flex-col gap-y-2"
+                      className="flex flex-col gap-y-2 w-full"
                     >
                       <label className="text-md  text-[#240D57]">
                         {item.labelTitle}
@@ -53,7 +51,7 @@ const CreateEvent = ({ setEvents, events }) => {
                   );
                 })}
                 <input
-                  className="p-5 rounded-lg bg-green-100 cursor-pointer"
+                  className="p-5 text-xl font-bold text-white w-1/2 rounded-lg bg-gradient-to-r from-primaryThree to-primaryFour  cursor-pointer"
                   type="submit"
                 ></input>
               </form>

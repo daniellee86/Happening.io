@@ -23,6 +23,7 @@ const CreateEvent = ({ setEvents, events }) => {
               <form
                 className="flex flex-col gap-y-8 items-center"
                 onSubmit={handleSubmit((data) => {
+                  // data.id =
                   setEvents((events) => [data, ...events]);
                   console.log(events);
                   router.push("/event-list");

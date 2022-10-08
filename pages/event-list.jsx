@@ -15,9 +15,7 @@ const EventList = ({ events, setActiveEvent, activeEvent }) => {
     <>
       <div className="flex flex-col items-center gap-y-5">
         <div id="title">
-          <h1 className="mt-10 font-medium text-[#240D57] text-2xl lg:text-4xl 2xl:text-5xl;">
-            Your Events
-          </h1>
+          <h1 className="mt-10 small-title">Your Events</h1>
         </div>
 
         <div id="sub-title">upcoming and past events</div>

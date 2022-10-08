@@ -17,3 +17,7 @@ body {
 .title-text {
   @apply font-bold text-[#240D57] text-4xl lg:text-6xl 2xl:text-7xl;
 }
+
+.small-title {
+  @apply font-medium text-[#240D57] text-2xl lg:text-4xl 2xl:text-5xl;
+}

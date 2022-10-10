@@ -6,11 +6,28 @@ import { useForm } from "react-hook-form";
 //NEXT IMPORTS
 import { useRouter } from "next/router";
 
-const CreateEvent = ({ setEvents, events }) => {
+const CreateEvent = ({
+  setEvents,
+  events,
+  images,
+  setImages,
+  urls,
+  setUrls,
+}) => {
   //REACT HOOK FORM
   const { register, handleSubmit } = useForm();
   //NEXT ROUTER
   const router = useRouter();
+
+  //function to set image state
+  const handleImage = (e) => {
+    setImages(e.target.file);
+    //iterate and create a new url for each file
+    const url = URL.createObjectURL(images);
+    //set urls
+    setUrls(url);
+  };
+
   return (
     <main className="p-5 flex flex-col gap-y-5">
       <h1 className="font-medium text-[#240D57] text-3xl lg:text-5xl 2xl:text-6xl;">
@@ -60,9 +77,25 @@ const CreateEvent = ({ setEvents, events }) => {
           </div>
         </div>
 
-        <div id="right" className="col-start-8 col-span-5 ">
+        <div id="right" className="col-start-8 col-span-5 h-fit relative ">
+          <div
+            id="overlay"
+            className="absolute z-20 h-full w-full flex justify-center items-center"
+          >
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImage}
+              className="py-3 px-5 sm:min-w-1/2 sm:h-1/4 rounded-xl text-sm text-white font-medium border border-white backdrop-blur-sm"
+            />
+          </div>
+
           {/* eslint-disable-next-line jsx-a11y/alt-text */}
-          <img src="/birthday.png" className="rounded-xl object-contain"></img>
+          <img
+            src={urls[0] ? urls[0] : "./birthday.png"}
+            alt="suck-balls"
+            className="rounded-xl object-contain"
+          ></img>
         </div>
       </section>
     </main>

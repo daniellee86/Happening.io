@@ -9,36 +9,30 @@ import { useRouter } from "next/router";
 const CreateEvent = ({
   setEvents,
   events,
-  images,
-  setImages,
-  urls,
-  setUrls,
 }) => {
   //REACT HOOK FORM
   const { register, handleSubmit } = useForm();
   //NEXT ROUTER
   const router = useRouter();
 
-  //function to set image state
-  const handleImage = (e) => {
-    setImages(e.target.file);
-    //iterate and create a new url for each file
-    const url = URL.createObjectURL(images);
-    //set urls
-    setUrls(url);
-  };
-
   return (
-    <main className="p-5 flex flex-col gap-y-5">
-      <h1 className="font-medium text-[#240D57] text-3xl lg:text-5xl 2xl:text-6xl;">
+    <main className=" relative p-5 flex justify-center items-center h-[93vh] overflow-hidden">
+         <img
+            src="./party.jpg"
+            alt="background"
+            className="absolute left-0 top-0 object-cover w-full  -z-20"
+          ></img>
+
+    
+      <section id="content-wrapper" className="w-full grid grid-cols-12 ">
+        <div id="left" className="col-span-12 ">
+        <h1 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-primaryThree text-center text-3xl lg:text-5xl 2xl:text-6xl ;">
         Create your event
       </h1>
-      <section id="content-wrapper" className="w-full grid grid-cols-12 ">
-        <div id="left" className="col-span-6 ">
-          <div id="form-container" className="flex justify-center">
+          <div id="form-container" className="flex justify-center mt-10">
             <div id="form" className="h-full w-full ">
               <form
-                className="flex flex-col gap-y-8 items-center"
+                className="flex flex-wrap gap-y-8 gap-5 items-center  justify-center"
                 onSubmit={handleSubmit((data) => {
                   // data.id =
                   setEvents((events) => [data, ...events]);
@@ -51,16 +45,16 @@ const CreateEvent = ({
                     <div
                       id="input-wrapper"
                       key={item.id}
-                      className="flex flex-col gap-y-2 w-full"
+                      className="flex flex-col  w-[45%]"
                     >
-                      <label className="text-md  text-[#240D57]">
+                      <label className="text-2xl font-bold backdrop-blur-lg w-fit p-3 mb-2 rounded-xl  text-white">
                         {item.labelTitle}
                       </label>
                       <input
                         {...register(item.inputTitle, {
                           required: false,
                         })}
-                        className="p-5 rounded-lg bg-green-100"
+                        className="p-7 rounded-lg bg-green-100"
                         type={item.inputType}
                         placeholder={item.placeholder}
                         defaultValue={item.value}
@@ -69,7 +63,7 @@ const CreateEvent = ({
                   );
                 })}
                 <input
-                  className="p-5 text-xl font-bold text-white w-1/2 rounded-lg bg-gradient-to-r from-primaryThree to-primaryFour  cursor-pointer"
+                  className="p-5 mt-10 text-2xl font-bold text-white w-1/3 rounded-lg bg-gradient-to-r from-primaryThree to-primaryFour  cursor-pointer"
                   type="submit"
                 ></input>
               </form>
@@ -77,26 +71,7 @@ const CreateEvent = ({
           </div>
         </div>
 
-        <div id="right" className="col-start-8 col-span-5 h-fit relative ">
-          <div
-            id="overlay"
-            className="absolute z-20 h-full w-full flex justify-center items-center"
-          >
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImage}
-              className="py-3 px-5 sm:min-w-1/2 sm:h-1/4 rounded-xl text-sm text-white font-medium border border-white backdrop-blur-sm"
-            />
-          </div>
-
-          {/* eslint-disable-next-line jsx-a11y/alt-text */}
-          <img
-            src={urls[0] ? urls[0] : "./birthday.png"}
-            alt="suck-balls"
-            className="rounded-xl object-contain"
-          ></img>
-        </div>
+   
       </section>
     </main>
   );

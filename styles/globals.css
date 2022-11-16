@@ -7,7 +7,7 @@ body {
 }
 
 .nav-item {
-  @apply w-6 h-6  fill-slate-700 group-hover:fill-primaryTwo;
+  @apply w-8 h-8  fill-white group-hover:fill-secondaryOne;
 }
 
 .nav-button {

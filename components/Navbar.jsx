@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav
       id="nav-container"
-      className=" py-2 flex justify-center border-b-2 border-slate-300 "
+      className=" py-2 flex justify-center bg-primaryOne/90 h-[7vh] "
     >
       <div
         id="nav-item-wrapper"
@@ -28,7 +28,7 @@ const Navbar = () => {
           </button>
         </Link>
         <Link href="/create-event">
-          <button className="group nav-button bg-gradient-to-r from-primaryThree to-primaryFour hover:from-primaryFour hover:to-primaryThree rounded-full">
+          <button className="group nav-button bg-gradient-to-r from-primaryThree to-primaryFour hover:from-primaryTwo hover:to-primaryTwo rounded-full">
             <AiOutlinePlus className="w-5 h-5 fill-white" />
           </button>
         </Link>
